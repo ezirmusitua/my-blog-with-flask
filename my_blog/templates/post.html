@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block title %}Flasky - Post{% endblock %}
+{% block page_content %}
+    <div class="row">
+        <div class="col-md-8 mid-main-col">
+            <div class="row admin-top-bar">
+                <div class="col-md-8">
+                    <h2 class="top-header">{{ post.title }}</h2>
+                </div>
+                <div class="col-md-2">
+                    <p class="post-timestamp">{{ moment(post.timestamp).fromNow() }}</p>
+                </div>
+                <div class="col-md-2 admin-btn">
+                    {% if current_user.is_authenticated %}
+                        <a class="btn btn-primary" href="{{ url_for('post.edit_post', post_id=post.id) }}" role="button">
+                            Edit
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row post-content">
+                <article class="post-content">
+                    {% if post.body_html %}
+                        {{ post.body_html |safe }}
+                    {% else %}
+                        {{ post.body }}
+                    {% endif %}
+                </article>
+            </div>
+            {% for message in get_flashed_messages() %}
+                <div class="row alert alert-warning">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <div class="row comments">
+                <h1 id="comments">Comments</h1>
+                <div class="comment-form">
+                    {{ wtf.quick_form(form) }}
+                </div>
+                {% include '_comments.html' %}
+            </div>
+            <div class="row footer">
+                <p class="footer">Footer</p>
+            </div>
+        </div>
+        <div class="col-md-4 right-nav-col">
+            <div class="right-nav">
+                {% include '_right_scrollable_nav.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

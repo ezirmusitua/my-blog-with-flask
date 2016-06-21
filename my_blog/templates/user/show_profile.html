@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Flasky - Post{% endblock %}
+{% block page_content %}
+    <div class="row">
+        <div class="col-md-8 mid-main-col">
+            {% for message in get_flashed_messages() %}
+                <div class="alert alert-warning">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {% if current_user.is_authenticated %}
+                <div class="row admin-top-bar">
+                    <div class="col-md-8">
+                        <h2 class="top-header">{{ admin.username }}</h2>
+                    </div>
+                    <div class="col-md-4 admin-btn">
+                        <a class="btn btn-primary" href="{{ url_for('user.edit_profile') }}">
+                            Edit Profile
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="row resume-top">
+                <!-- 个人基本信息 -->
+                <div class="col-md-8">
+                    <h2 class="resume-top-name">
+                        {{ admin.real_name }}
+                    </h2>
+                    <p class="resume-top-short-desc">
+                        {{ admin.short_desc }}
+                    </p>
+                </div>
+                <!-- 个人联系方式 -->
+                <div class="col-md-4">
+                    <ul class="result-top-contact">
+                        <li>{{ admin.phone_number }}</li>
+                        <li>{{ admin.email }}</li>
+                        <li>{{ admin.cur_address }}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row resume-mid-1">
+                <div class="col-md-12 resume-mid-1-about-me">
+                    <h2>About</h2>
+                    <p> {{ admin.long_desc | safe }} </p>
+                </div>
+            </div>
+            <div class="row resume-mid-2">
+                <div class="col-md-12 resume-mid-2-work-exp">
+                    <h2 class="resume-mid-2-work-exp">Work Experience</h2>
+                    <ul>
+                        {% for exp in work_experience %}
+                            {% if loop.index < 4 %}
+                                <li class="row resume-mid-2-work-exp">
+                                    <div class="col-md-4">
+                                        {{ moment(exp.start_time).fromNow() }}-
+                                        {{ moment(exp.end_time).fromNow() }}
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="resume-mid-2-work-exp">
+                                            {{ exp.work_title }} -
+                                            {{ exp.work_type }} -
+                                            {{ exp.pos_in_work }}
+                                        </p>
+                                        <p>{{ exp.work_desc }}</p>
+                                    </div>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!-- education and skills -->
+            <div class="row resume-bottom inner">
+                <div class="col-md-7 resume-bottom-edu-exp">
+                    <h2 class="resume-bottom-edu-exp">Education</h2>
+                    <ul>
+                        {% for exp in edu_experience %}
+                            {% if loop.index < 3 %}
+                                <li class="resume-bottom-edu-exp">
+                                    <p class="resume-bottom-edu-exp">{{ moment(exp.start_time).fromNow() }}-{{ moment(exp.end_time).fromNow() }} |
+                                        {{ exp.institution }}</p>
+                                    <p>{{ exp.learn_what }}:{{ exp.gpa }}</p>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-md-5 resume-bottom-skills">
+                    <h2>Skills</h2>
+                    <ul>
+                        {% for skill in skills %}
+                            {% if loop.index < 5 %}
+                                <li class="row resume-bottom-skills">
+                                    <div class="col-md-7 resume-bottom-skill-name">
+                                        {{ skill.skill_name }}
+                                    </div>
+                                    <div class="col-md-5">
+                                        {% if skill.master_degree == 5 %}
+                                            专家
+                                        {% endif %}
+                                        {% if skill.master_degree == 4 %}
+                                            精通
+                                        {% endif %}
+                                        {% if skill.master_degree == 3 %}
+                                            掌握
+                                        {% endif %}
+                                        {% if skill.master_degree == 2 %}
+                                            熟悉
+                                        {% endif %}
+                                        {% if skill.master_degree == 1 %}
+                                            了解
+                                        {% endif %}
+                                    </div>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row footer">
+                <p class="footer">Footer</p>
+            </div>
+        </div>
+        <div class="col-md-4 right-nav-col">
+            <div class="right-nav">
+                {% include '_right_scrollable_nav.html' %}
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+{% endblock %}

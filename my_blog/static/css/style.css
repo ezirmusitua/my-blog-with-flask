@@ -1,0 +1,314 @@
+body {
+    background: #ddd;
+    color: #666;
+    font-size: 14px;
+    font-family: "-apple-system","Open Sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+h1 {
+    font-size: 2em
+}
+h3 {
+    font-size: 1.3em
+}
+h4 {
+    font-size: 1.1em
+}
+a {
+    color: #2479CC;
+    text-decoration: none
+}
+.container {
+    min-height: 100%;
+    position: relative
+}
+
+.right-nav-col {
+    background-image: url("../bg.jpg");
+    background-size: cover;
+    margin-left: 815px;
+    border-left: 1px solid #3d4542;
+    height: 100%;
+    position: fixed;
+    width: 320px
+}
+div.tag-list-modal-header {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    background-color: #64c7ff;
+}
+h2.tag-list-modal {
+    font-weight: bold;
+    color: #ffffff;
+}
+ul.tag-list-modal {
+    list-style-type: none;
+}
+a.tag-btn {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    width: 100px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: #64c7ff;
+    color: #ffffff;
+}
+.mid-main-col {
+    background: #fff;
+    right: 0;
+    margin-left: 35px;
+    min-height: 100%;
+    color: #687f99;
+    position: absolute;
+    left: 0;
+}
+.post-list-container{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+div.show-posts {
+    min-height: 580px;
+    margin: 10px 20px 0px 20px;
+}
+p.post-timestamp {
+    color: #ffffff;
+    float: left;
+    margin-top: 30px;
+}
+h2.post-title {
+    font-weight: 800;
+    font-size: 24px;
+}
+#header {
+    border-bottom: none;
+    height: auto;
+    line-height: 30px;
+    margin-left: 86px;
+    padding: 0 0;
+    width: 100%
+}
+#header a {
+    color: #EFEFEF;
+}
+#header h1 {
+    float: none;
+    font-weight: 300;
+    font-size: 30px
+}
+#header .subtitle {
+    color: #ffffff
+}
+#header a:hover {
+    color: #2479CC;
+    transition: color .3s
+}
+#header .profilepic img {
+    background-size: 140px 140px;
+    border-radius: 25%;
+    display: block;
+    height: 140px;
+    margin: 100px 0 20px -10px;
+    width: 140px
+}
+div.admin-btn {
+    margin-top: 20px;
+    margin-right: 0px;
+    color: #ffffff;
+}
+div.admin-top-bar {
+    background-color: #64c7ff;
+    border-bottom: 1px solid #e0e0e0;
+    height: 100px;
+}
+h2.top-header {
+    margin-top: 20px;
+    margin-left: 10px;
+    color: #ffffff;
+    font-weight:bold;
+}
+div.post-content{
+    margin:0 20px 0 15px;
+    min-height: 200px;
+    width:97%;
+}
+article.post-content {
+    margin-top: 20px;
+    min-height: 300px
+}
+div.resume-top {
+    background-color: #64c7ff;
+    min-height: 200px;
+}
+h2.resume-top-name {
+    margin: 42px 0px 0px 40px;
+    font-size: 60px;
+    font-weight: bold;
+    color: #ffffff;
+}
+p.resume-top-short-desc {
+    margin: 0px 0px 0px 45px;
+    font-size: 30px;
+    color: #ffffff;
+}
+ul.result-top-contact {
+    margin: 52px 0px 0px -30px;
+    list-style-type: none;
+    font-size: 20px;
+    color: #ffffff;
+}
+div.resume-mid-1 {
+    min-height: 180px;
+    margin-left: 28px;
+    color: #687f99;
+}
+div.resume-mid-1-about-me {
+    max-width: 700px;
+}
+div.resume-mid-2 {
+    min-height: 320px;
+    margin-left: 28px;
+    color: #687f99;
+}
+h2.resume-mid-2-work-exp {
+    margin-bottom: 20px;
+}
+li.resume-mid-2-work-exp {
+    list-style-type: none;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+p.resume-mid-2-work-exp {
+    font-weight: bold;
+}
+div.resume-bottom {
+    min-height: 280px;
+    margin-left: 28px;
+    color: #687f99;
+}
+li.resume-bottom-edu-exp {
+    list-style-type: none;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+p.resume-bottom-edu-exp {
+    font-weight: bold;
+}
+li.resume-bottom-skills {
+    list-style-type: none;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+div.resume-bottom-skill-name {
+    margin-left: -60px;
+    font-weight: bold;
+    text-align: left;
+}
+div.edit-profile-form {
+    margin: 10px 20px 10px 20px;
+}
+div.edit-post {
+    height: 500px;
+    margin: 20px 20px 10px 20px;
+}
+div.footer {
+    width: 780px;
+    height: 60px;
+    background-color: #64c7ff;
+    border-top: 1px solid #e0e0e0e0;
+    text-align: center;
+}
+p.footer {
+    margin-top:22px;
+    color: #ffffff;
+    font-size: 16px;
+}
+div.login {
+    margin-left: 195px;
+    margin-right: 195px;
+}
+div.login-form{
+    background-color: #ffffff;
+    height: 485px;
+    padding-top: 200px;
+    color: #687f99;
+    padding-top:80px;
+}
+h1.login-title{
+    background-color: #64c7ff;
+    color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: bold;
+    padding: 30px 20px 20px 20px;
+    height: 100px;
+    margin: 0px 0px 0px 0px;
+}
+.right-nav{
+    position: relative;
+    width: 100%;
+}
+div.pagination {
+    width: 100%;
+    text-align: center;
+    padding: 0px auto;
+    margin: 0px;
+}
+div.comments {
+    margin: 15px 10px 10px 10px;
+    border-top: 1px solid #e0e0e0;
+}
+div.comment-body {
+    min-height: 51px;
+    margin-left: -20px;
+}
+ul.comments {
+    list-style-type: none;
+    margin-left: -20px;
+    margin-top: 10px;
+}
+ul.comments li.comment {
+    padding: 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+ul.comments li.comment:nth-child(1) {
+    border-top: 1px solid #e0e0e0;
+}
+ul.comments li.comment:hover {
+    background-color: #f0f0f0;
+}
+div.comment-email {
+    margin-left: -15px;
+    margin-bottom: 5px;
+    font-size: medium;
+    font-weight: bold;
+}
+div.comment-date {
+    float: left;
+}
+div.comment-thumbnail {
+    position: absolute;
+}
+div.comment-content {
+    margin-left: 15px;
+}
+div.comment-form {
+    margin: 10px 10px 0px 0px;
+}
+
+/* css for wtf form */
+input#comment-submit {
+    background-color: #64c7ff;
+    color: #ffffff;
+    margin-left: 650px;
+}
+textarea#post-body {
+    height: 280px;
+}
+input#post-submit {
+    background-color: #64c7ff;
+    color: #ffffff;
+    margin-left: 637px;
+}
+input#profile-submit {
+    background-color: #64c7ff;
+    color: #ffffff;
+    margin-left: 648px;
+}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block title %}Show Post Filter By Tag{% endblock %}
+{% block page_content %}
+    <div class="row">
+        <div class="col-md-8 mid-main-col">
+            <div class="row admin-top-bar">
+                <div class="col-md-8">
+                    <h2 class="top-header">Article list</h2>
+                    {% for message in get_flashed_messages() %}
+                        <div class="alert alert-warning">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-4 admin-btn">
+                    {% if current_user.is_authenticated %}
+                        <a class="btn btn-primary" href="{{ url_for('post.add_post') }}" role="button">
+                            Add Post
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row show-posts">
+                {% include '_show_posts.html' %}
+                {% if pagination %}
+                    <div class="row">
+                        <div class="pagination">
+                            {{ macros.pagination_widget(pagination, '.index') }}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="row footer">
+                <p class="footer">Footer</p>
+            </div>
+        </div>
+        <div class="col-md-4 right-nav-col">
+            <div class="right-nav">
+                {% include '_right_scrollable_nav.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

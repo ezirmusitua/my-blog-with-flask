@@ -1,0 +1,20 @@
+{% for post in posts %}
+    {% if loop.index % 3 == 0 and loop.index != 0 %}
+        <div class="row">
+    {% endif %}
+<div class="col-md-4">
+    <h2 class="post-title">{{ post.title }}</h2>
+    <p>
+        {% if post.body_html %}
+            {{ post.body_html | safe | truncate(135) }}
+        {% else %}
+            {{ post.body | truncate(135) }}
+        {% endif %}
+    </p>
+
+    <p><a class="btn" href="/posts/{{ post.id }}">View details »</a></p>
+</div>
+{% if loop.index % 3 == 0 and loop.index != 0 %}
+    </div>
+{% endif %}
+{% endfor %}

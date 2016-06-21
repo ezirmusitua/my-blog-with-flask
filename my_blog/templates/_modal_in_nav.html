@@ -1,0 +1,30 @@
+<!-- Modal for tag list -->
+<div class="modal fade tag-list-modal" id="tag-list-modal" role="dialog"
+     aria-labelledby="tag-list-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header tag-list-modal-header">
+                <h2 class="modal-title tag-list-modal" id="tag-list-modal-label">
+                    Tag List
+                </h2>
+            </div>
+            <div class="modal-body">
+                <ul class="tag-list-modal list-inline">
+                    {% for tag in tag_list %}
+                        <li>
+                            <a class="btn tag-btn text-center" role="button" href="{{ url_for('main.show_posts_under_tag', tag_name=tag.name) }}">
+                                {{ tag.name }}
+                                <small>({{ tag.count }})</small>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>

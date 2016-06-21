@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Flasky - Post{% endblock %}
+{% block page_content %}
+    <div class="row">
+        <div class="col-md-8 mid-main-col">
+            <div class="row admin-top-bar">
+                <h2 class="top-header">Edit Profile</h2>
+            </div>
+            <div class="row edit-profile-form">
+                {{ wtf.quick_form(profile_form) }}
+            </div>
+            <div class="row footer">
+                <p class="footer">Footer</p>
+            </div>
+        </div>
+        <div class="col-md-4 right-nav-col">
+            {% include '_right_scrollable_nav.html' %}
+        </div>
+    </div>
+{% endblock %}

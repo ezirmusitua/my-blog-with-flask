@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_content %}
+    <div class="row login">
+        <div class="row">
+            <h1 class="text-center login-title" id="login_title">
+                Welcome to Jferroal's Blog
+            </h1>
+        </div>
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
+            </div>
+        {% endfor %}
+        <div class="row login-form">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 ">{{ wtf.quick_form(form) }}</div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row footer">
+            <p class="footer">Footer</p>
+        </div>
+    </div>
+
+{% endblock %}
